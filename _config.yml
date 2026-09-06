@@ -1,0 +1,19 @@
+title: "C++ Programming | Fall 2026"
+description: "Textbooks, course overview, class format, HW, Lab, Quiz, schedule, and assessment for C++ Programming, Fall 2026."
+lang: en
+timezone: Asia/Seoul
+markdown: kramdown
+permalink: pretty
+
+# 배포용 기본값. 실제 GitHub 저장소 이름을 정하면 세 값을 함께 확인합니다.
+url: "https://mgyukim87.github.io"
+baseurl: "/lec-cpp-programming2026"
+repository: "mgyukim87/lec-cpp-programming2026"
+
+exclude:
+  - .github
+  - UPLOAD_GUIDE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,166 @@
+/* Content is edited in index.md. This stylesheet controls all screen sizes. */
+:root {
+  color-scheme: light;
+  --ink: #182b3e;
+  --muted: #4c6073;
+  --blue: #174a7e;
+  --pale: #edf4fa;
+  --line: #d0dce6;
+  --nav-height: 4.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 100%;
+  line-height: 1.75;
+  color: var(--ink);
+  background: #f5f7fa;
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: var(--blue); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, [tabindex="0"]:focus-visible { outline: 3px solid #b15c09; outline-offset: 4px; }
+[hidden] { display: none !important; }
+::selection { background: #c9e1f5; }
+p, ul, ol, dl { margin: 0 0 1.25rem; }
+p, li, dd { word-break: keep-all; overflow-wrap: anywhere; }
+li + li { margin-top: .45rem; }
+strong { font-weight: 700; }
+small { font-size: .9375rem; color: var(--muted); }
+code { font-family: inherit; padding: .05em .3em; background: var(--pale); border-radius: .2em; }
+.site-shell { width: min(100% - 4rem, 78rem); margin: 0 auto; }
+.course-page { padding-bottom: 3rem; }
+.course-page > p, .course-page > ul { max-width: 80ch; }
+.course-page h2, .course-page h3 { line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+.course-page h2 {
+  margin: 4rem 0 1.25rem;
+  padding: .2rem 0 .85rem;
+  border-bottom: 2px solid var(--blue);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  letter-spacing: -.035em;
+}
+.course-page h3 { margin: 2rem 0 .85rem; font-size: 1.2rem; }
+[id] { scroll-margin-top: calc(var(--nav-height) + 1.5rem); }
+.course-hero { padding: 2.5rem 0 1.5rem; }
+.eyebrow { margin: 0 0 .4rem; color: var(--blue); font-size: .9375rem; font-weight: 700; }
+.course-hero h1 { margin: 0; line-height: 1.2; font-size: clamp(2.35rem, 5vw, 3.5rem); letter-spacing: -.055em; }
+.lead { margin: .6rem 0 0; color: var(--muted); font-size: 1.0625rem; }
+.course-nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; gap: .1rem .35rem;
+  padding: .65rem 0; background: #f5f7fa;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.course-nav a { display: flex; align-items: center; min-height: 2.75rem; padding: .5rem .85rem; border-radius: .35rem; font-size: .9375rem; font-weight: 650; text-decoration: none; }
+.course-nav a:first-child { background: var(--blue); color: #fff; }
+.course-nav a:hover { background: #e1ebf4; color: var(--blue); }
+.course-nav + h2 { margin-top: 2rem; }
+.week-nav { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1.25rem 0; }
+.week-nav a { min-width: 2.75rem; min-height: 2.75rem; display: flex; justify-content: center; align-items: center; padding: .35rem .5rem; background: #fff; border: 1px solid var(--line); border-radius: .25rem; font-size: .875rem; text-decoration: none; font-variant-numeric: tabular-nums; }
+.week-nav a:hover { background: var(--pale); border-color: var(--blue); }
+.course-note { margin: 1.25rem 0; padding: 1rem 1.25rem; background: var(--pale); border-left: 3px solid var(--blue); }
+.course-note.warning { background: #fff6e3; border-left-color: #926019; }
+.course-note p:last-child { margin-bottom: 0; }
+.table-scroll { margin: 1.25rem 0 1.5rem; border: 1px solid var(--line); border-radius: .35rem; background: #fff; }
+table { border-collapse: separate; border-spacing: 0; width: 100%; table-layout: fixed; font-variant-numeric: tabular-nums; }
+th, td { padding: 1rem .9rem; vertical-align: top; text-align: left; overflow-wrap: anywhere; }
+th { background: var(--blue); color: #fff; font-weight: 650; font-size: .9375rem; }
+td { border-bottom: 1px solid var(--line); }
+tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #f7fafc; }
+tbody tr:hover { background: #edf4fa; }
+.assessment-table th:nth-child(1) { width: 20%; }
+.assessment-table th:nth-child(2) { width: 15%; }
+.assessment-table td:nth-child(2) { color: var(--blue); font-weight: 750; font-size: 1.0625rem; }
+.schedule-table { border-top: 0; }
+.schedule-table thead th { position: sticky; top: var(--nav-height); z-index: 5; box-shadow: 0 1px 0 var(--blue); }
+.schedule-table th:nth-child(1) { width: 7%; }
+.schedule-table th:nth-child(2) { width: 16%; }
+.schedule-table th:nth-child(3) { width: 33%; }
+.schedule-table th:nth-child(4) { width: 10%; }
+.schedule-table th:nth-child(5) { width: 10%; }
+.schedule-table th:nth-child(6) { width: 24%; }
+.schedule-table th, .schedule-table td { padding: 1rem .7rem; }
+.schedule-table td:first-child { color: var(--muted); }
+.schedule-table td:nth-child(2) { font-weight: 750; white-space: nowrap; }
+.schedule-table td:nth-child(3) { font-weight: 650; line-height: 1.65; }
+.schedule-table td:nth-child(n + 4) { font-weight: 400; line-height: 1.75; }
+.schedule-table small { display: block; margin-top: .35rem; padding-top: .4rem; border-top: 1px dashed var(--line); }
+.schedule-table td br:has(+ small) { display: none; }
+.schedule-table tbody tr { background: #fff; }
+.schedule-table tbody tr:nth-child(4n + 3), .schedule-table tbody tr:nth-child(4n + 4) { background: #f4f8fb; }
+.schedule-table tbody tr:nth-child(2n + 3) td { border-top: 2px solid #b7cadb; }
+.schedule-table tr:has(.badge.exam) td { background: #fff3f0; }
+.schedule-table tr:target td { background: #fff5d7; }
+.badge { display: inline-block; margin: 0 .15rem .3rem 0; padding: .12rem .45rem; border-radius: .25rem; font-weight: 700; font-size: .875rem; white-space: nowrap; }
+.badge.due { color: #764b0a; background: #ffebbb; }
+.badge.exam { color: #952c27; background: #fce0dc; }
+.site-footer { width: min(100% - 4rem, 78rem); margin: 0 auto; padding: 1.5rem 0 2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .9375rem; color: var(--muted); }
+.skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 30; background: #fff; padding: .8rem; transform: translateY(-200%); }
+.skip-link:focus { transform: none; }
+
+/* Reflow the same schedule cells; keep HW, Lab, and Quiz in their assigned sessions. */
+@media screen and (max-width: 960px) {
+  .site-shell, .site-footer { width: calc(100% - 2.5rem); }
+  .course-nav a { padding: .4rem .65rem; }
+  .schedule-table { border: 0; background: transparent; }
+  .schedule-table table, .schedule-table tbody { display: block; }
+  .schedule-table thead { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .schedule-table tbody { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .schedule-table tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: start; padding: 1.15rem; border: 1px solid #bccedd; border-top: 3px solid var(--blue); border-radius: .35rem; background: #fff !important; }
+  .schedule-table tbody td, .schedule-table tbody tr:nth-child(2n + 3) td { padding: 0; border: 0; background: transparent; }
+  .schedule-table td:nth-child(1) { grid-column: 1; grid-row: 1; font-size: .9375rem; text-align: left !important; color: var(--blue); font-weight: 650; }
+  .schedule-table td:nth-child(1)::before { content: "W"; }
+  .schedule-table td:nth-child(2) { grid-column: 2; grid-row: 1; color: var(--blue); font-size: 1.0625rem; }
+  .schedule-table td:nth-child(3) { grid-column: 1 / -1; grid-row: 2; font-size: 1.125rem; margin: .75rem 0; }
+  .schedule-table td:nth-child(n + 4) { grid-column: 1 / -1; }
+  .schedule-table td:nth-child(4) { grid-row: 3; }
+  .schedule-table td:nth-child(5) { grid-row: 4; }
+  .schedule-table td:nth-child(6) { grid-row: 5; }
+  .schedule-table td:nth-child(n + 4):empty { display: none; }
+  .schedule-table td:nth-child(n + 4):not(:empty) { margin-top: .5rem; padding-top: .7rem; border-top: 1px solid var(--line); }
+  .schedule-table td:nth-child(n + 4):not(:empty)::before { display: block; font-size: .875rem; font-weight: 650; color: var(--muted); margin-bottom: .3rem; }
+  .schedule-table td:nth-child(4):not(:empty)::before { content: "HW"; }
+  .schedule-table td:nth-child(5):not(:empty)::before { content: "Lab"; }
+  .schedule-table td:nth-child(6):not(:empty)::before { content: "Quiz"; }
+  .schedule-table tr:has(.badge.exam) { border-top-color: #952c27; background: #fff8f5 !important; }
+  .schedule-table tr:has(.badge.exam) td, .schedule-table tr:target td { background: transparent; }
+  .schedule-table tr:target { outline: 3px solid #b7791f; outline-offset: 2px; }
+}
+@media screen and (max-width: 600px) {
+  .site-shell, .site-footer { width: calc(100% - 2rem); }
+  .course-hero { padding: 1.75rem 0 1.25rem; }
+  .lead { font-size: 1rem; }
+  .course-nav { padding: .35rem 0; gap: 0; }
+  .course-nav a { font-size: .875rem; padding: .35rem .55rem; }
+  .course-page h2 { margin-top: 2.75rem; }
+  .course-nav + h2 { margin-top: 1.5rem; }
+  .course-note { padding: .85rem 1rem; }
+  .week-nav { gap: .35rem; }
+  .schedule-table tbody { grid-template-columns: minmax(0, 1fr); }
+  .schedule-table tbody tr { padding: 1rem; }
+  th, td { padding: .8rem .65rem; }
+  .assessment-table th:first-child { width: 24%; }
+  .assessment-table th:nth-child(2) { width: 20%; }
+}
+/* On heavily enlarged/short screens, leave more room for the reading surface. */
+@media screen and (max-height: 520px) {
+  .course-nav { position: static; }
+  .schedule-table thead th { top: 0; }
+  [id] { scroll-margin-top: 1rem; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  :root { font-size: 10pt; color: #000; background: #fff; }
+  .site-shell, .site-footer { width: 100%; }
+  .course-nav, .week-nav, .skip-link, .site-footer { display: none; }
+  .course-hero { padding-top: 0; }
+  .course-page h2 { margin-top: 1.75rem; break-after: avoid; }
+  .table-scroll { overflow: visible; }
+  .schedule-table thead th { position: static; }
+  thead { display: table-header-group; }
+  tr, .course-note { break-inside: avoid; }
+  th, td, .schedule-table th, .schedule-table td { padding: .5rem; }
+  th { background: #eee; color: #000; }
+  small { font-size: 9.5pt; }
+  a { color: #000; }
+}
