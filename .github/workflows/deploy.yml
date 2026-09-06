@@ -1,0 +1,88 @@
+name: Build and publish C++ course site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Keep branch updates and live deployments in the same order.
+concurrency:
+  group: course-gh-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v6
+
+      - name: Build the Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Check the public build
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s _site/index.html
+          test -s _site/assets/css/course.css
+          test -s _site/assets/js/course.js
+          test -s _site/assets/docs/syllabus.pdf
+          test -s _site/assets/docs/C++Programming_2026_Fall_Revised_Syllabus_v2.pdf
+          test ! -e _site/index.md
+          test ! -e _site/UPLOAD_GUIDE.md
+          test ! -e _site/README.md
+          test ! -e _site/Gemfile
+          test ! -e _site/.github
+          touch _site/.nojekyll
+
+      # Creates gh-pages on the first successful build; publishes only _site.
+      - name: Publish the built site to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          enable_jekyll: false
+          allow_empty_commit: ${{ github.event_name == 'workflow_dispatch' }}
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: Publish C++ course site
+
+      # Deploy the same output explicitly rather than relying on a bot push
+      # to trigger a second Pages workflow.
+      - name: Upload the GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # One-time repository setup: Settings > Pages > Source > GitHub Actions.
+      # The build job can create gh-pages before this setting is enabled.
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy the site to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
