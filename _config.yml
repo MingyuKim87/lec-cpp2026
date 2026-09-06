@@ -5,10 +5,10 @@ timezone: Asia/Seoul
 markdown: kramdown
 permalink: pretty
 
-# 배포용 기본값. 실제 GitHub 저장소 이름을 정하면 세 값을 함께 확인합니다.
-url: "https://mgyukim87.github.io"
-baseurl: "/lec-cpp-programming2026"
-repository: "mgyukim87/lec-cpp-programming2026"
+# GitHub Pages address for this repository.
+url: "https://mingyukim87.github.io"
+baseurl: "/lec-cpp2026"
+repository: "MingyuKim87/lec-cpp2026"
 
 exclude:
   - .github
@@ -17,3 +17,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - "*.zip"

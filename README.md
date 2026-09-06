@@ -17,4 +17,6 @@ No personal access token or custom secret is required. Edit `main`; `gh-pages` c
 
 The schedule keeps 32 sessions and separate, unlinked HW, Lab, and Quiz columns. Unassigned cells remain empty, and quizzes appear only in odd-numbered sessions. Assessment remains **27 / 27 / 14 / 16 / 16 points**, including Lab16 and Quiz16.
 
-See [UPLOAD_GUIDE.md](UPLOAD_GUIDE.md) for setup and update instructions. The configured repository, `mgyukim87/lec-cpp-programming2026`, is a deployment example; no GitHub repository has been created or published by this local preparation.
+Repository: [MingyuKim87/lec-cpp2026](https://github.com/MingyuKim87/lec-cpp2026). Site: [C++ Programming](https://mingyukim87.github.io/lec-cpp2026/).
+
+See [UPLOAD_GUIDE.md](UPLOAD_GUIDE.md) for setup and update instructions. The hidden `.github` directory must be committed as actual files: uploading a ZIP alone does not install its workflow.

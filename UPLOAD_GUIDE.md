@@ -13,9 +13,9 @@ main: index.md · _config.yml · _layouts · assets · .github
 
 ## 1. 새 저장소와 최초 Pages 설정
 
-기본 배포 예시는 `mgyukim87/lec-cpp-programming2026`입니다. 이 작업에서는 GitHub 저장소를 생성하거나 업로드하지 않았습니다.
+현재 저장소는 [MingyuKim87/lec-cpp2026](https://github.com/MingyuKim87/lec-cpp2026)입니다. `_config.yml`도 이 저장소 주소로 설정되어 있습니다.
 
-1. GitHub에서 사용할 빈 저장소를 만듭니다. 아래 명령 예시는 README 등을 자동 생성하지 않은 저장소를 기준으로 합니다.
+1. 기존 `lec-cpp2026` 저장소의 `main`을 사용합니다. 다른 저장소에 처음 설치할 때만 빈 저장소를 만듭니다.
 2. 아래 방법으로 파일을 `main`에 올립니다.
 3. 최초 한 번, **Settings → Pages → Build and deployment → Source → GitHub Actions**를 선택합니다.
 4. 첫 실행이 Pages 설정 전에 시작되어 `deploy` 단계에서 실패했다면 **Actions → Build and publish C++ course site → Run workflow → main**으로 다시 실행합니다. 성공한 `build` 작업에서 이미 `gh-pages`를 만들었다면 직접 만들 필요가 없습니다.
@@ -26,10 +26,10 @@ GitHub는 기본 `GITHUB_TOKEN`만으로 신규 Pages 사이트를 자동 활성
 
 ## 2. 업로드할 파일
 
-ZIP 자체가 아니라 **압축을 푼 내용**을 저장소 루트에 올립니다. 저장소 안에 `docs/`나 `7_Webpage/` 폴더를 한 번 더 만들지 않습니다.
+ZIP 자체가 아니라 **압축을 푼 내용**을 저장소 루트에 올립니다. ZIP 파일을 올려도 GitHub가 압축을 풀거나 내부 워크플로를 실행하지 않습니다. 저장소 안에 `docs/`나 `7_Webpage/` 폴더를 한 번 더 만들지 않습니다.
 
 ```text
-lec-cpp-programming2026/       ← main 브랜치의 저장소 루트
+lec-cpp2026/       ← main 브랜치의 저장소 루트
 ├── .github/workflows/deploy.yml
 ├── .gitignore
 ├── _config.yml
@@ -46,9 +46,20 @@ lec-cpp-programming2026/       ← main 브랜치의 저장소 루트
         └── C++Programming_2026_Fall_Revised_Syllabus_v2.pdf
 ```
 
-`.github`는 숨김 폴더이며 자동 배포에 필수입니다. macOS Finder에서는 `Command + Shift + .`로 숨김 파일을 볼 수 있습니다. 아래 `git add .`는 숨김 폴더도 함께 추가합니다. `.github`, README, 업로드 안내와 Gemfile은 웹사이트 빌드에서 제외됩니다.
+**업로드 후 저장소 파일 목록에 `.github`가 보여야 합니다.** 없으면 Actions 실행도 `gh-pages` 생성도 시작되지 않습니다. `.github`는 숨김 폴더이며 자동 배포에 필수입니다. macOS Finder에서는 `Command + Shift + .`로 숨김 파일을 볼 수 있습니다. 아래 `git add .`는 숨김 폴더도 함께 추가합니다. `.github`, README, 업로드 안내, Gemfile과 ZIP 파일은 웹사이트 빌드에서 제외됩니다.
 
-아직 Git 저장소와 원격 주소를 설정하지 않은 로컬 폴더라면:
+이미 커밋이 있는 현재 저장소를 수정할 때는 먼저 clone한 뒤 파일을 반영합니다. `git add .`는 숨김 폴더도 포함합니다.
+
+```bash
+git clone https://github.com/MingyuKim87/lec-cpp2026.git
+cd lec-cpp2026
+# 최신 배포 파일을 이 폴더에 복사 (.github 포함)
+git add .
+git commit -m "Fix automatic gh-pages deployment"
+git push origin main
+```
+
+아직 커밋이 없는 새 저장소와 로컬 폴더를 연결할 때만:
 
 ```bash
 cd "/Users/mgyukim/Documents/Lectures/2026_Fall/2_C_Programming/7_Webpage/docs"
@@ -56,7 +67,7 @@ git init
 git branch -M main
 git add .
 git commit -m "Add C++ course site and automatic gh-pages deployment"
-git remote add origin https://github.com/mgyukim87/lec-cpp-programming2026.git
+git remote add origin https://github.com/MingyuKim87/lec-cpp2026.git
 git push -u origin main
 ```
 
@@ -79,7 +90,7 @@ GitHub 웹에서 `main`의 파일을 편집해 커밋해도 자동화가 실행�
 
 - **Actions → Build and publish C++ course site:** `build`와 `deploy`가 모두 성공했는지 확인합니다.
 - **gh-pages:** 루트의 `index.html`, `assets/`, `.nojekyll`을 확인합니다. 이 브랜치는 빌드 결과 전용이므로 직접 수정하지 않습니다.
-- **게시 주소:** 기본값은 `https://mgyukim87.github.io/lec-cpp-programming2026/`이며, 실제 주소는 Actions의 `github-pages` 배포 환경과 Settings → Pages에 표시됩니다.
+- **게시 주소:** 기본값은 `https://mingyukim87.github.io/lec-cpp2026/`이며, 실제 주소는 Actions의 `github-pages` 배포 환경과 Settings → Pages에 표시됩니다.
 
 빌드나 필수 공개 파일 검사가 실패하면 브랜치 갱신·사이트 배포 단계로 진행하지 않습니다. `gh-pages` 갱신 이후 Pages 배포만 실패한 경우에는 Actions 오류와 최초 Pages 설정을 확인한 뒤 다시 실행합니다.
 
@@ -96,7 +107,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-기본 미리보기 주소는 `http://127.0.0.1:4000/lec-cpp-programming2026/`입니다. 루트 주소용 배포는 `_config.yml`의 `baseurl: ""`을 사용합니다. 과거 페이지 생성·ref2 적용 스크립트는 현재 원본에 다시 실행하지 않습니다.
+기본 미리보기 주소는 `http://127.0.0.1:4000/lec-cpp2026/`입니다. 루트 주소용 배포는 `_config.yml`의 `baseurl: ""`을 사용합니다. 과거 페이지 생성·ref2 적용 스크립트는 현재 원본에 다시 실행하지 않습니다.
 
 ## 참고
 
