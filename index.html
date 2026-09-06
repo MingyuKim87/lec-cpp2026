@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C++ Programming | Fall 2026</title>
+    <meta name="description" content="Textbooks, course overview, class format, session-by-session HW, Lab and Quiz assignments, and assessment for C++ Programming, Fall 2026.">
+    <meta name="theme-color" content="#174a7e">
+    <link rel="canonical" href="https://mingyukim87.github.io/lec-cpp2026/">
+    <link rel="stylesheet" href="/lec-cpp2026/assets/css/course.css">
+    <script src="/lec-cpp2026/assets/js/course.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <main id="main-content" class="site-shell" tabindex="-1">
+      <!--
+  Edit course content and tables in this Markdown file.
+  Screen styles: assets/css/course.css
+  HW, Lab, and Quiz identifiers are plain text; unassigned cells stay empty.
+-->
+
+<div class="course-page">
+
+  <header class="course-hero">
+  <p class="eyebrow">Kookmin University · Fall 2026</p>
+  <h1>C++ Programming</h1>
+  <p class="lead">Course Syllabus</p>
+</header>
+
+  <nav class="course-nav" aria-label="Course syllabus sections">
+  <a href="#textbook">Textbook</a>
+  <a href="#overview">Overview</a>
+  <a href="#operation">Course Format</a>
+  <a href="#schedule">Schedule &amp; Activities</a>
+  <a href="#assessment">Assessment</a>
+</nav>
+
+  <h2 id="textbook">Textbook</h2>
+
+  <p>The original syllabus lists the following textbooks. Titles are rendered in English from the Korean editions; use the ISBN to identify the correct book.</p>
+
+  <ul>
+    <li><em>Welcome to C++</em>, In-guk Cheon. Infinity Books, 2018. ISBN 9791185578347.</li>
+    <li><em>Forouzan’s C++ Essentials</em>, Behrouz A. Forouzan and Richard F. Gilberg. Hanbit Academy, 2020. ISBN 9791156645061.</li>
+    <li><em>Fundamentals of C++ Programming</em>, Gwang-su Han and Jun-su Choi. Kookmin University Press, 2010. ISBN 9788978122962.</li>
+  </ul>
+
+  <p>Lecture materials and LMS announcements specify the preparation for each class. The schedule below lists topics and activities; textbook page assignments have not been provided.</p>
+
+  <h2 id="overview">Course Overview</h2>
+
+  <p>This course develops an understanding of how C/C++ programs execute and how objects and memory are managed. Students apply object-oriented ideas encountered in Python or Java to C++, inspect program behavior with gdb/lldb, and use the Standard Template Library (STL) to implement data structures and algorithms. Topics range from types, functions, and pointers to classes, polymorphism, templates, containers, lambdas, and callbacks.</p>
+
+  <h3 id="learning-objectives">Learning Objectives</h3>
+
+  <ul>
+    <li>Implement small, well-defined functions using control flow, pointers, and dynamic memory.</li>
+    <li>Design classes using constructors, destructors, copying, operator overloading, inheritance, and polymorphism.</li>
+    <li>Write reusable code with exceptions, templates, and STL containers, iterators, and algorithms.</li>
+    <li>Explain how function pointers, function objects, lambdas, and callbacks are called, and how lifetimes affect their safety.</li>
+    <li>Verify behavior with a debugger and boundary tests, and explain submitted code.</li>
+  </ul>
+
+  <h2 id="operation">Course Format</h2>
+
+  <p>The course combines <strong>video preparation with in-class explanations, programming practice, questions, and short quizzes</strong>. Classes meet on Tuesdays and Thursdays, 13:30–15:00. Bring a personal laptop to classes and exams. Student exercise files use <strong>C++17</strong>; implement the <code class="language-plaintext highlighter-rouge">TODO(student)</code> sections while preserving the provided function signatures and input/output requirements.</p>
+
+  <ul>
+    <li><strong>Before class:</strong> Watch the assigned videos, review the lecture materials, and prepare the development environment.</li>
+    <li><strong>During class:</strong> Implement Lab exercises, inspect variables and memory with a debugger, ask questions, and explain your code.</li>
+    <li><strong>After class:</strong> Complete HW and the weekly Quiz, and check normal inputs and boundary cases.</li>
+    <li><strong>Submissions:</strong> Follow the current LMS instructions. HW deadlines are announced by week; Labs are submitted during class or by the announced deadline.</li>
+  </ul>
+
+  <h2 id="schedule">Class Schedule &amp; Activities</h2>
+
+  <div class="course-note">
+
+    <p><strong>Reading the schedule:</strong> HW and Lab entries indicate when an activity is introduced or assigned, not its submission deadline. <strong>Quizzes take place in odd-numbered sessions—the first class of each week.</strong> Blank cells mean no HW, Lab, or Quiz is assigned to that session.</p>
+
+  </div>
+
+  <p>The table includes 30 regular sessions in Weeks 1–15 and two supplemental sessions in Week 16. Activity numbers may differ from the order in which they appear. Repeated Lab entries refer to the same activity, not additional assignments.</p>
+
+  <nav class="week-nav" aria-label="Jump to a week" hidden=""></nav>
+
+  <div class="table-scroll schedule-table" role="region" aria-label="32 class sessions with HW, Lab, and Quiz assignments">
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: right">Week</th>
+          <th>Date</th>
+          <th>Class Topic</th>
+          <th>HW</th>
+          <th>Lab</th>
+          <th>Quiz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: right">1</td>
+          <td>Sep. 1, 2026</td>
+          <td>Course Introduction, Development Environment, and Safety</td>
+          <td> </td>
+          <td>Lab01</td>
+          <td>Quiz01</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">1</td>
+          <td>Sep. 3, 2026</td>
+          <td>Variables and the Debugger</td>
+          <td> </td>
+          <td>Lab02<br />Lab03</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">2</td>
+          <td>Sep. 8, 2026</td>
+          <td>Variables, Arrays, and Multidimensional Arrays</td>
+          <td> </td>
+          <td>Lab05</td>
+          <td>Quiz02</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">2</td>
+          <td>Sep. 10, 2026</td>
+          <td>Control Flow and the Practice System</td>
+          <td>HW01<br />HW02</td>
+          <td>Lab04</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">3</td>
+          <td>Sep. 15, 2026</td>
+          <td>Data Types and Pointers</td>
+          <td>HW03</td>
+          <td> </td>
+          <td>Quiz03</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">3</td>
+          <td>Sep. 17, 2026</td>
+          <td>Constants and Type Conversions</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">4</td>
+          <td>Sep. 22, 2026</td>
+          <td>Functions, Parameters, and Command-Line Arguments</td>
+          <td>HW04</td>
+          <td> </td>
+          <td>Quiz04</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">4</td>
+          <td>Sep. 24, 2026</td>
+          <td>Library Functions and Variable Scope</td>
+          <td> </td>
+          <td>Lab07</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">5</td>
+          <td>Sep. 29, 2026</td>
+          <td>Expressions and Evaluation Order</td>
+          <td> </td>
+          <td>Lab06</td>
+          <td>Quiz05</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">5</td>
+          <td>Oct. 1, 2026</td>
+          <td>Argument Passing and References</td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">6</td>
+          <td>Oct. 6, 2026</td>
+          <td>Dynamic Memory Allocation and Passing Arrays</td>
+          <td>HW06</td>
+          <td> </td>
+          <td>Quiz06</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">6</td>
+          <td>Oct. 8, 2026</td>
+          <td>C Strings, std::string, and Classes</td>
+          <td>HW05</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">7</td>
+          <td>Oct. 13, 2026</td>
+          <td>Access Specifiers, Constructors, and Destructors</td>
+          <td> </td>
+          <td>Lab08</td>
+          <td>Quiz07</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">7</td>
+          <td>Oct. 15, 2026</td>
+          <td>Initializer Lists, Copy Constructors, and Deep Copy</td>
+          <td>HW07</td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">8</td>
+          <td>Oct. 20, 2026</td>
+          <td>Namespaces, Objects, static, and const</td>
+          <td> </td>
+          <td> </td>
+          <td>Quiz08<br /><small>Due before the midterm</small></td>
+        </tr>
+        <tr>
+          <td style="text-align: right">8</td>
+          <td>Oct. 22, 2026</td>
+          <td>Midterm Exam <span class="badge exam">Exam</span></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">9</td>
+          <td>Oct. 27, 2026</td>
+          <td>Friends and Non-Member Operators</td>
+          <td> </td>
+          <td>Lab09</td>
+          <td>Quiz09</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">9</td>
+          <td>Oct. 29, 2026</td>
+          <td>Member Operators, Assignment, and Conversion</td>
+          <td>HW08<br />HW09</td>
+          <td>Lab12</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">10</td>
+          <td>Nov. 3, 2026</td>
+          <td>Inheritance, protected, and Derived Object Construction</td>
+          <td> </td>
+          <td>Lab13</td>
+          <td>Quiz10</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">10</td>
+          <td>Nov. 5, 2026</td>
+          <td>Function Redefinition and Multiple Inheritance</td>
+          <td>HW10</td>
+          <td>Lab13</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">11</td>
+          <td>Nov. 10, 2026</td>
+          <td>Polymorphism</td>
+          <td>HW11</td>
+          <td> </td>
+          <td>Quiz11</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">11</td>
+          <td>Nov. 12, 2026</td>
+          <td>Virtual Functions, Abstract Classes, Bvector, and Bit Masks</td>
+          <td> </td>
+          <td>Lab10</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">12</td>
+          <td>Nov. 17, 2026</td>
+          <td>Exception Handling</td>
+          <td>HW12</td>
+          <td>Lab14</td>
+          <td>Quiz12</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">12</td>
+          <td>Nov. 19, 2026</td>
+          <td>Function Templates and Class Templates</td>
+          <td> </td>
+          <td>Lab14</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">13</td>
+          <td>Nov. 24, 2026</td>
+          <td>STL Sequential Containers and Iterators</td>
+          <td>HW13<br />HW14</td>
+          <td> </td>
+          <td>Quiz13</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">13</td>
+          <td>Nov. 26, 2026</td>
+          <td>STL Associative Containers and Adapters</td>
+          <td> </td>
+          <td>Lab11</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">14</td>
+          <td>Dec. 1, 2026</td>
+          <td>Function Pointers, Function Objects, and Lambdas</td>
+          <td> </td>
+          <td>Lab15</td>
+          <td>Quiz14</td>
+        </tr>
+        <tr>
+          <td style="text-align: right">14</td>
+          <td>Dec. 3, 2026</td>
+          <td>STL Algorithms</td>
+          <td> </td>
+          <td>Lab15</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">15</td>
+          <td>Dec. 8, 2026</td>
+          <td>Final Exam, Part 1 <span class="badge exam">Exam</span></td>
+          <td> </td>
+          <td> </td>
+          <td>Quiz15 · Final Review<br /><small>Due before the final exam</small></td>
+        </tr>
+        <tr>
+          <td style="text-align: right">15</td>
+          <td>Dec. 10, 2026</td>
+          <td>Final Exam, Part 2 <span class="badge exam">Exam</span></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td style="text-align: right">16</td>
+          <td>To be announced</td>
+          <td>Callback Basics: Control Flow and Passing Callables</td>
+          <td> </td>
+          <td> </td>
+          <td>Quiz16<br /><small>Graded · deadline to be announced</small></td>
+        </tr>
+        <tr>
+          <td style="text-align: right">16</td>
+          <td>To be announced</td>
+          <td>std::function, Lifetimes, Exceptions, and Reentrancy</td>
+          <td> </td>
+          <td>Lab16</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <p>The schedule and pace may change with academic arrangements or class progress. Holiday cancellations, makeup classes, and submission changes will be communicated through official course announcements.</p>
+
+  <p><strong>Week 16:</strong> The supplemental callback unit covers callable passing, <code class="language-plaintext highlighter-rouge">std::function</code>, capture lifetimes, exceptions, and reentrancy. Lab16 and Quiz16 each count for 1 point in the assessment below. Release dates and deadlines will be announced through the LMS before grades are finalized so that all students can participate.</p>
+
+  <h2 id="assessment">Assessment</h2>
+
+  <p>The course uses the <strong>revised v2 syllabus’s 100-point scheme</strong>. Components are graded against the stated criteria, and final grades follow the university’s relative grading rules.</p>
+
+  <div class="table-scroll assessment-table" role="region" aria-label="Assessment components, points, and grading details">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th style="text-align: right">Points</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Midterm Exam</td>
+          <td style="text-align: right">27</td>
+          <td>Oct. 22; covers Week01–Week08_1. Raw score out of 100 × 0.27.</td>
+        </tr>
+        <tr>
+          <td>Final Exam</td>
+          <td style="text-align: right">27</td>
+          <td>Dec. 8 and 10; focuses on Weeks 9–14. Both sessions form one exam component. Raw score out of 100 × 0.27.</td>
+        </tr>
+        <tr>
+          <td>HW</td>
+          <td style="text-align: right">14</td>
+          <td>HW01–14; each graded out of 10; raw score ÷ 10, up to 1 course point.</td>
+        </tr>
+        <tr>
+          <td>Lab</td>
+          <td style="text-align: right">16</td>
+          <td>Lab01–16; each graded out of 10; raw score ÷ 10, up to 1 course point.</td>
+        </tr>
+        <tr>
+          <td>Participation (Quiz)</td>
+          <td style="text-align: right">16</td>
+          <td>Quiz01–16; 5 questions per week. Weekly raw score ÷ 5, up to 1 course point.</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td style="text-align: right"><strong>100</strong></td>
+          <td>27 + 27 + 14 + 16 + 16</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <h3 id="hw-lab-and-quiz-grading">HW, Lab, and Quiz Grading</h3>
+
+  <ul>
+    <li><strong>Lab rubric (10 raw points):</strong> Compilation and execution 2; core TODO correctness 4; boundary cases and tests 2; code explanation 2.</li>
+    <li><strong>HW rubric (10 raw points):</strong> Functional correctness 5; boundary cases and memory safety 2; code quality 2; code explanation 1.</li>
+    <li><strong>Quiz:</strong> 16 weekly quizzes, 5 questions each, 80 questions in total. Each question is worth 1 raw point. Quiz scores count toward participation only and are not counted again as a separate component.</li>
+    <li><strong>Quiz08 and Quiz15:</strong> Quiz08 checks the Oct. 20 material and closes before the midterm. Quiz15 is a Final Review of Weeks 9–14 and closes before the final exam. Quizzes are not taken during exam time.</li>
+    <li><strong>Quiz14 and Quiz16:</strong> Quiz14 checks both value and reference captures in lambdas; follow course announcements for supporting explanations. Quiz16 covers the supplemental callback unit and is included in grading.</li>
+  </ul>
+
+  <p>Projects, presentations, and attendance have no separate point allocation; code explanation is assessed through the Lab/HW rubrics. University absence rules still apply. Exam times are the regular class hours, 13:30–15:00. Detailed exam coverage, permitted tools, and arrangements for the two final-exam sessions will be announced before the exams.</p>
+
+</div>
+
+    </main>
+    <footer class="site-footer">
+      <span>C++ Programming · Fall 2026</span>
+      <a href="#main-content">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
