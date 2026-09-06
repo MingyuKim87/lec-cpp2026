@@ -33,7 +33,7 @@ jobs:
       - name: Check the public build
         shell: bash
         run: |
-          set -euo pipefail
+          set -euxo pipefail
           test -s _site/index.html
           test -s _site/assets/css/course.css
           test -s _site/assets/js/course.js
@@ -44,9 +44,11 @@ jobs:
           test ! -e _site/README.md
           test ! -e _site/Gemfile
           test ! -e _site/.github
-          touch _site/.nojekyll
+          test ! -e _site/cpp-programming-2026-jekyll.zip
 
       # Creates gh-pages on the first successful build; publishes only _site.
+      # This action adds .nojekyll in its own checkout. The Docker build output
+      # is root-owned, so validation must not write into _site.
       - name: Publish the built site to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
